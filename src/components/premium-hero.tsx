@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { books, hero } from "@/data/site-content";
+import { books, hero, pressFeature } from "@/data/site-content";
 import { Reveal } from "@/components/reveal";
 
 const heroBookOrder = [
@@ -107,8 +107,47 @@ export function PremiumHero() {
                 </Link>
               </div>
 
-              <div className="mt-5 border-t border-white/10 pt-4 text-center text-xs uppercase tracking-[0.22em] text-white/45">
-                Wonder-filled stories for children and families
+              <div className="mt-5 border-t border-white/10 pt-4">
+                <div className="grid gap-4 sm:grid-cols-[0.95fr_0.85fr] sm:items-center">
+                  <div>
+                    <p className="text-[0.62rem] font-semibold uppercase tracking-[0.28em] text-[#f5d99c]">
+                      {pressFeature.eyebrow}
+                    </p>
+                    <p className="mt-2 text-sm font-semibold leading-6 text-white">
+                      {pressFeature.title}
+                    </p>
+                    <p className="mt-2 text-xs leading-6 text-white/58">
+                      {pressFeature.description}
+                    </p>
+                  </div>
+
+                  <div className="grid grid-cols-2 gap-2">
+                    {pressFeature.images.map((image) => (
+                      <a
+                        key={image.src}
+                        className="group relative overflow-hidden rounded-[16px] border border-white/10 bg-[#0d2244] shadow-[0_14px_30px_rgba(0,0,0,0.28)] transition hover:-translate-y-1 hover:border-white/20"
+                        href={image.src}
+                        rel="noreferrer"
+                        target="_blank"
+                      >
+                        <Image
+                          alt={image.alt}
+                          className="h-full w-full object-cover"
+                          height={320}
+                          src={image.src}
+                          width={240}
+                        />
+                        <div className="absolute inset-x-0 bottom-0 bg-[linear-gradient(180deg,transparent,rgba(3,8,16,0.82))] px-3 py-2 text-[0.58rem] font-semibold uppercase tracking-[0.22em] text-white/85 opacity-100 sm:opacity-0 sm:transition sm:duration-300 sm:group-hover:opacity-100">
+                          View larger
+                        </div>
+                      </a>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="mt-4 text-center text-xs uppercase tracking-[0.22em] text-white/45">
+                  Wonder-filled stories for children and families
+                </div>
               </div>
             </div>
           </Reveal>
