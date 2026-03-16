@@ -1,9 +1,12 @@
 .next/
 node_modules/
+out/
 
 # Local source duplicates not used by the app
 author photo.png
 poster joyce.png
+newyork (1).png
+newyork (2).png
 
 # Misc
 .DS_Store

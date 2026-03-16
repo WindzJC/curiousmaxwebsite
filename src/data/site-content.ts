@@ -48,6 +48,16 @@ export type ProofPoint = {
   description: string;
 };
 
+export type PressFeature = {
+  eyebrow: string;
+  title: string;
+  description: string;
+  images: Array<{
+    src: string;
+    alt: string;
+  }>;
+};
+
 export type TrailerSpotlight = {
   eyebrow: string;
   title: string;
@@ -231,6 +241,23 @@ export const proofPoints: ProofPoint[] = [
       "Availability varies by retailer, with discovery paths for both print and digital readers.",
   },
 ];
+
+export const pressFeature: PressFeature = {
+  eyebrow: "Press Feature",
+  title: "Featured in The New York Times Book Review",
+  description:
+    "Curious Maxx appears in a holiday reads print feature, adding a refined press note to the series presentation.",
+  images: [
+    {
+      src: "/images/press/newyork-book-review-cover.png",
+      alt: "The New York Times Book Review cover shown in a provided press photo",
+    },
+    {
+      src: "/images/press/newyork-book-review-spread.png",
+      alt: "Provided press photo showing Curious Maxx featured in a holiday reads print spread",
+    },
+  ],
+};
 
 export const trailerSpotlight: TrailerSpotlight = {
   eyebrow: "Trailer in Production",
