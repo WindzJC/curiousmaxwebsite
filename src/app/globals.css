@@ -1,0 +1,129 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-body: var(--font-manrope);
+  --font-display: var(--font-cormorant);
+}
+
+:root {
+  color-scheme: dark;
+  --bg-top: #061221;
+  --bg-mid: #0a1c34;
+  --bg-bottom: #06111f;
+  --ink: #f8fbff;
+  --muted: #b2c4df;
+  --gold: #d9b463;
+  --gold-soft: #f5d99c;
+  --blue-soft: #7fc3ff;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  background:
+    radial-gradient(circle at top, rgba(110, 168, 255, 0.22), transparent 30%),
+    radial-gradient(circle at 82% 18%, rgba(245, 217, 156, 0.08), transparent 18%),
+    radial-gradient(circle at 20% 22%, rgba(127, 195, 255, 0.12), transparent 22%),
+    linear-gradient(180deg, var(--bg-top) 0%, var(--bg-mid) 50%, var(--bg-bottom) 100%);
+  color: var(--ink);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background-image:
+    radial-gradient(rgba(255, 255, 255, 0.14) 0.8px, transparent 0.8px),
+    radial-gradient(rgba(255, 255, 255, 0.08) 0.6px, transparent 0.6px);
+  background-position: 0 0, 40px 70px;
+  background-size: 180px 180px, 220px 220px;
+  opacity: 0.32;
+  pointer-events: none;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(180deg, rgba(4, 9, 18, 0) 0%, rgba(4, 9, 18, 0.08) 34%, rgba(4, 9, 18, 0.28) 100%);
+  pointer-events: none;
+}
+
+::selection {
+  background: rgba(217, 180, 99, 0.35);
+  color: white;
+}
+
+a,
+button {
+  cursor: pointer;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.page-shell {
+  position: relative;
+}
+
+.page-shell::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  z-index: -1;
+  height: 720px;
+  width: min(1200px, 100%);
+  transform: translateX(-50%);
+  background:
+    radial-gradient(circle at 20% 28%, rgba(127, 195, 255, 0.18), transparent 24%),
+    radial-gradient(circle at 76% 18%, rgba(217, 180, 99, 0.12), transparent 16%),
+    radial-gradient(circle at 50% 15%, rgba(190, 219, 255, 0.12), transparent 20%);
+  filter: blur(12px);
+  pointer-events: none;
+}
+
+.section-divider {
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(90deg, transparent, rgba(217, 180, 99, 0.42), transparent);
+}
+
+.soft-shimmer {
+  background-image: linear-gradient(120deg, rgba(255, 255, 255, 0.88), rgba(245, 217, 156, 0.92), rgba(180, 221, 255, 0.88));
+  background-size: 200% 100%;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer 10s linear infinite;
+}
+
+.floating-card {
+  animation: float 8s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
