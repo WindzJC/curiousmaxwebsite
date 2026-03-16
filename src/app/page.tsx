@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 import { BookCard } from "@/components/book-card";
-import { GlobeIcon, MailIcon, PhoneIcon } from "@/components/icons";
+import { MailIcon, PhoneIcon } from "@/components/icons";
 import { Navbar } from "@/components/navbar";
 import { PremiumHero } from "@/components/premium-hero";
 import { Reveal } from "@/components/reveal";
@@ -373,7 +373,7 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="grid gap-3 sm:grid-cols-3">
+            <div className="grid gap-3 sm:grid-cols-2">
               <a
                 className="block rounded-[24px] border border-white/10 bg-white/6 p-5 transition hover:border-white/20 hover:bg-white/10"
                 href={`mailto:${contact.email}`}
@@ -394,19 +394,6 @@ export default function Home() {
                   Phone
                 </p>
                 <p className="mt-2 text-sm text-white">{contact.phone}</p>
-              </a>
-
-              <a
-                className="block rounded-[24px] border border-white/10 bg-white/6 p-5 transition hover:border-white/20 hover:bg-white/10"
-                href={contact.websiteHref}
-                rel="noreferrer"
-                target="_blank"
-              >
-                <GlobeIcon className="h-5 w-5 text-[#f5d99c]" />
-                <p className="mt-4 text-xs font-semibold uppercase tracking-[0.28em] text-slate-200/80">
-                  Website
-                </p>
-                <p className="mt-2 text-sm text-white">{contact.website}</p>
               </a>
             </div>
           </div>
